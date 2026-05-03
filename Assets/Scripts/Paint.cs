@@ -19,19 +19,10 @@ public class Paint : MonoBehaviour
 
     void Update()
     {
-        if (aController != null)
-        {
-            Debug.Log(
-                "Grip: " + aController.GetGripValue().ToString("F3") +
-                " | Trigger: " + aController.GetTriggerValue().ToString("F3")
-            );
-        }
-
         if (aController != null && drawColor)
         {
             if (aController.GetGripValue() == 1 && aController.GetTriggerValue() == 1)
             {
-                Debug.Log("[STEP 3] Initial Draw Triggered!");
                 currentBrushStroke = Instantiate(brushStroke, tip.position, tip.rotation, tip);
                 currentBrushStroke.material.color = currentColor;
                 previousStroke.Push(currentBrushStroke);
@@ -51,7 +42,6 @@ public class Paint : MonoBehaviour
                     {
                         if (currentBrushStroke.transform.parent != null)
                         {
-                            Debug.Log("[STEP 4] Trigger Released - Ending Stroke.");
                             currentBrushStroke.transform.parent = null;
                             drawCount = 0;
                         }
@@ -66,7 +56,6 @@ public class Paint : MonoBehaviour
             {
                 if (aController.GetGripValue() == 1 && aController.GetTriggerValue() == 1)
                 {
-                    Debug.Log("[STEP 3] New Stroke Started!");
                     currentBrushStroke = Instantiate(brushStroke, tip.position, tip.rotation, tip);
                     currentBrushStroke.material.color = currentColor;
                     previousStroke.Push(currentBrushStroke);
@@ -83,11 +72,10 @@ public class Paint : MonoBehaviour
             return;
         }
 
-        AnimateHandController aHandController = other.GetComponentInParent<AnimateHandController>();
+        AnimateHandController aHandController = other.gameObject.GetComponent<AnimateHandController>();
         
-        if (aHandController != null)
+        if (aController != null)
         {
-            Debug.Log("[STEP 2] Controller linked!");
             aController = aHandController;
             drawColor = true;
         }
