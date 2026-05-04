@@ -8,7 +8,7 @@ public class Paint : MonoBehaviour
     private TrailRenderer currentBrushStroke;
     private Stack<TrailRenderer> previousStroke = new Stack<TrailRenderer>();
     private AnimateHandController aController = null;
-    private Color32 currentColor = Color.red;
+    private Color32 currentColor = Color.white;
     int drawCount = 0;
     bool drawColor = true;
 
@@ -102,6 +102,23 @@ public class Paint : MonoBehaviour
         if (tip != null && tip.parent != null)
         {
             tip.parent.GetComponent<Renderer>().material.color = currentColor;
+        }
+
+        Gradient newGradient = new Gradient();
+
+        GradientColorKey[] colorKeys = new GradientColorKey[2];
+        colorKeys[0] = new GradientColorKey(currentColor, 0.0f);
+        colorKeys[1] = new GradientColorKey(currentColor, 1.0f);
+
+        GradientAlphaKey[] alphaKeys = new GradientAlphaKey[2];
+        alphaKeys[0] = new GradientAlphaKey(currentColor.a / 255f, 0.0f);
+        alphaKeys[1] = new GradientAlphaKey(currentColor.a / 255f, 1.0f);
+
+        newGradient.SetKeys(colorKeys, alphaKeys);
+
+        if (brushStroke != null)
+        {
+            brushStroke.colorGradient = newGradient;
         }
     }
 

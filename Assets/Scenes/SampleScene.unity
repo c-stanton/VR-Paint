@@ -228,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 77503550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.526, y: 0.62, z: 0}
+  m_LocalPosition: {x: -0.526, y: 0.62, z: 0.181}
   m_LocalScale: {x: 0.02, y: 0.4, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 16592384
+    rgba: 4294782464
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +970,7 @@ Transform:
   m_GameObject: {fileID: 482991912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.083, y: 0.508, z: 0.384}
+  m_LocalPosition: {x: -0.083, y: 0.508, z: 0.51}
   m_LocalScale: {x: 0.8990037, y: 0.01829786, z: 0.11812}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 255
+    rgba: 4278190335
 --- !u!1 &566027597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 60415
+    rgba: 4278250495
 --- !u!1 &963213368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1641,7 @@ Transform:
   m_GameObject: {fileID: 963213368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.508, z: 0.116}
+  m_LocalPosition: {x: 0.4, y: 0.508, z: 0.27}
   m_LocalScale: {x: 0.11209728, y: 0.01829786, z: 0.0930195}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 25855
+    rgba: 4278215935
 --- !u!1 &1188407326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 16711806
+    rgba: 4294901886
 --- !u!1 &1231507659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278190080
 --- !u!1 &1399808747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,7 +2547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 1113856
+    rgba: 4279303936
 --- !u!1 &1445117164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
 --- !u!1 &1777023052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorPicker
   newColor:
     serializedVersion: 2
-    rgba: 16761600
+    rgba: 4294951680
 --- !u!1 &1807192867
 GameObject:
   m_ObjectHideFlags: 0
