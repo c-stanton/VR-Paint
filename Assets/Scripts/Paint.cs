@@ -8,18 +8,24 @@ public class Paint : MonoBehaviour
     private TrailRenderer currentBrushStroke;
     private Stack<TrailRenderer> previousStroke = new Stack<TrailRenderer>();
     private AnimateHandController aController = null;
-    private Color32 currentColor = Color.white;
+    private Color32 currentColor = Color.red;
     int drawCount = 0;
     bool drawColor = true;
 
     void Start()
     {
+        ChangeBrushColor(currentColor);
         if(tip != null && tip.parent != null)
             tip.parent.GetComponent<Renderer>().material.color = currentColor;
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (aController == null) return;
 
         bool isGripPressed = aController.GetGripValue() > 0.8f;
@@ -35,7 +41,6 @@ public class Paint : MonoBehaviour
                 
                 drawCount = 1;
                 drawColor = false;
-                Debug.Log("First Stroke Started");
             }
         }
         else
@@ -48,7 +53,6 @@ public class Paint : MonoBehaviour
                     {
                         currentBrushStroke.transform.parent = null;
                         drawCount = 0;
-                        Debug.Log("Stroke Finished");
                     }
                 }
             }
@@ -60,7 +64,6 @@ public class Paint : MonoBehaviour
                     currentBrushStroke.material.color = currentColor;
                     previousStroke.Push(currentBrushStroke);
                     drawCount = 1;
-                    Debug.Log("Subsequent Stroke Started");
                 }
             }
         }
@@ -68,7 +71,7 @@ public class Paint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("VRHand") || (other.transform.parent != null && other.transform.parent.CompareTag("VRHand")))
+        if (other.CompareTag("VRHand"))
         {
             AnimateHandController aHandController = other.gameObject.GetComponentInParent<AnimateHandController>();
             
@@ -76,14 +79,13 @@ public class Paint : MonoBehaviour
             {
                 aController = aHandController;
                 drawColor = true;
-                Debug.Log("Controller Linked Successfully!");
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("VRHand") || (other.transform.parent != null && other.transform.parent.CompareTag("VRHand")))
+        if (other.CompareTag("VRHand"))
         {
             if (currentBrushStroke != null && currentBrushStroke.transform.parent != null)
             {
@@ -91,7 +93,6 @@ public class Paint : MonoBehaviour
             }
             aController = null;
             drawCount = 0;
-            Debug.Log("Controller Unlinked.");
         }
     }
 
@@ -131,7 +132,6 @@ public class Paint : MonoBehaviour
             if (strokeToRemove != null)
             {
                 Destroy(strokeToRemove.gameObject);
-                Debug.Log("Last stroke erased. Strokes remaining: " + previousStroke.Count);
             }
         }
     }

@@ -11,8 +11,6 @@ public class ColorPicker : MonoBehaviour
         if (brush != null)
         {
             brush.ChangeBrushColor(newColor);
-            
-            Debug.Log("Dipped brush in " + gameObject.name + ". Color is now: " + newColor);
         }
     }
 }
