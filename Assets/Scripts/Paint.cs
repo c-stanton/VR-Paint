@@ -21,11 +21,6 @@ public class Paint : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         if (aController == null) return;
 
         bool isGripPressed = aController.GetGripValue() > 0.8f;
